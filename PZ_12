@@ -1,0 +1,29 @@
+#12.1
+#В последовательности на n целых чисел умножить все элементы на первый элемент
+
+
+def multiply_elements_by_first(lst):
+    if not lst:  # если список пустой
+        return []
+
+    first_element = lst[0]
+    return [x * first_element for x in lst]
+
+
+numbers = [2, 3, 4, 5]
+result = multiply_elements_by_first(numbers)
+print(result)
+
+
+
+#12.2
+#Составить генератор (yield), который переведет символы строки из верхнего регистра в нижний
+
+
+def to_generator(input_string):
+    yield from map(lambda char: char.lower(), input_string)
+
+
+input_str = "HeLLo WoRLD"
+result = ''.join(to_generator(input_str))
+print(result)
